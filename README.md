@@ -2,11 +2,11 @@
 
 ## 功能
 
-贴吧: 支持吧务封禁用户
+贴吧: 支持吧务封禁用户
 
 ## 如何安装
 
-### 1. 安装Go语言运行环境
+### 1. 安装Go语言运行环境
 
 * 访问 [Go语言官网](https://golang.org) 下载安装Golang
 * 设置GOPATH环境变量
@@ -22,7 +22,7 @@ set GOPATH=C:\path\to\your\gopath
 
 ### 2. 安装
 ---
-* 使用预编译文件
+* 使用预编译文件
 
 > [点此查看发布页](https://github.com/iikira/Tieba-Ban-User/releases)
 
