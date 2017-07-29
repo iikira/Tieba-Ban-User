@@ -23,7 +23,7 @@ type ban struct {
 
 func main() {
 	fmt.Printf("Tieba-Ban-User v%s, Last Update: 2017-07-29\n", version)
-	fmt.Println("Author: iikira")
+	fmt.Println("Author: iikira <https://github.com/iikira/Tieba-Ban-User>")
 	fmt.Println()
 
 	//解析flag参数
