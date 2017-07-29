@@ -6,7 +6,7 @@
 
 ## 如何使用
 ---
-无需安装Go语言即可下载使用 [点此查看发布页](https://github.com/iikira/Tieba-Ban-User/releases)
+无需安装Go语言即可下载使用 [点此查看发布页](https://github.com/iikira/Tieba-Ban-User/releases)
 
 在 (Linux, MacOS)终端／(Windows)命令提示符 中运行。
 
