@@ -1,6 +1,7 @@
 package main
 
 import "flag"
+import "fmt"
 
 var (
 	bduss  = flag.String("b", "", "Baidu BDUSS.")
@@ -17,6 +18,10 @@ type ban struct {
 }
 
 func main() {
+	fmt.Println("Tieba-Ban-User v1.0, Last Update: 2017-07-29")
+	fmt.Println("Author: iikira")
+	fmt.Println()
+
 	//解析flag参数
 	flag.Parse()
 
