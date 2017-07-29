@@ -1,7 +1,9 @@
 package main
 
-import "flag"
-import "fmt"
+import (
+	"flag"
+	"fmt"
+)
 
 var (
 	bduss  = flag.String("b", "", "Baidu BDUSS.")
