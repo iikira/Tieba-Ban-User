@@ -5,7 +5,9 @@ import (
 	"fmt"
 )
 
-var (
+var ( // -ldflags "-X main.version=1.0.1"
+	version = "1.0.1"
+
 	bduss  = flag.String("b", "", "Baidu BDUSS.")
 	tieba  = flag.String("t", "", "Tieba name.")
 	user   = flag.String("u", "", "Tieba username.")
@@ -20,7 +22,7 @@ type ban struct {
 }
 
 func main() {
-	fmt.Println("Tieba-Ban-User v1.0, Last Update: 2017-07-29")
+	fmt.Printf("Tieba-Ban-User %s, Last Update: 2017-07-29\n", version)
 	fmt.Println("Author: iikira")
 	fmt.Println()
 
