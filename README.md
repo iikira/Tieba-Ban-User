@@ -1,4 +1,4 @@
-# Tieba-Ban-User v1.0.1
+# Tieba-Ban-User v1.0
 
 ## 功能
 
