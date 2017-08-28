@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/iikira/Tieba-Cloud-Sign-Backend/baiduUtil"
 )
 
 var ( // -ldflags "-X main.version=1.0"
@@ -40,9 +41,9 @@ func main() {
 
 	//初始化数据，获取贴吧fid
 	ba := ba{
-		tieba: *tieba,
+		name: *tieba,
 	}
-	ba.getFid()
+	ba.fid, _ = baiduUtil.GetTiebaFid(ba.name)
 
 	//初始化数据，执行封禁
 	ban := ban{
