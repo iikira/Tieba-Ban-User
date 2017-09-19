@@ -13,10 +13,10 @@ type ba struct {
 
 // getTbs 获取贴吧tbs
 func getTbs(BDUSS string) string {
-	Data := map[string]string{
+	post := map[string]string{
 		"Cookie": "BDUSS=" + BDUSS,
 	}
-	body, err := baiduUtil.Fetch("http://tieba.baidu.com/dc/common/tbs", nil, nil, &Data)
+	body, err := baiduUtil.Fetch("http://tieba.baidu.com/dc/common/tbs", nil, nil, post)
 	if err != nil {
 		return ""
 	}
@@ -26,7 +26,7 @@ func getTbs(BDUSS string) string {
 
 // banUser 执行封禁
 func (b *ban) banUser() {
-	postData := map[string]string{
+	post := map[string]string{
 		"BDUSS":  b.BDUSS,
 		"day":    fmt.Sprintf("%d", b.day),
 		"fid":    b.fid,
@@ -38,15 +38,15 @@ func (b *ban) banUser() {
 		"z":      "1111111111",
 	}
 
-	tiebaHeaderData := map[string]string{
+	header := map[string]string{
 		"Content-Type": "application/x-www-form-urlencoded",
 		"Cookie":       "ka=open",
 		"net":          "1",
 		"User-Agent":   "bdtb for Android 6.9.2.1",
 		"Connection":   "Keep-Alive",
 	}
-	baiduUtil.TiebaClientSignature(&postData)
-	body, err := baiduUtil.Fetch("http://tieba.baidu.com/c/c/bawu/commitprison", nil, &postData, &tiebaHeaderData)
+	baiduUtil.TiebaClientSignature(post)
+	body, err := baiduUtil.Fetch("http://tieba.baidu.com/c/c/bawu/commitprison", nil, post, header)
 
 	baiduUtil.PrintErrAndExit("执行封禁时网络错误：", err)
 
