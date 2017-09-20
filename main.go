@@ -17,8 +17,10 @@ var ( // -ldflags "-X main.version=1.0"
 )
 
 type ban struct {
-	BDUSS, user, reason string
-	day                 int
+	BDUSS, // 百度BDUSS
+	user, // 百度用户名
+	reason string // 封禁理由
+	day int // 封禁天数
 	ba
 }
 
