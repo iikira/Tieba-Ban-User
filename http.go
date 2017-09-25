@@ -13,10 +13,10 @@ type ba struct {
 
 // getTbs 获取贴吧tbs
 func getTbs(BDUSS string) string {
-	post := map[string]string{
+	header := map[string]string{
 		"Cookie": "BDUSS=" + BDUSS,
 	}
-	body, err := baiduUtil.Fetch("http://tieba.baidu.com/dc/common/tbs", nil, nil, post)
+	body, err := baiduUtil.Fetch("GET", "http://tieba.baidu.com/dc/common/tbs", nil, nil, header)
 	if err != nil {
 		return ""
 	}
@@ -46,7 +46,7 @@ func (b *ban) banUser() {
 		"Connection":   "Keep-Alive",
 	}
 	baiduUtil.TiebaClientSignature(post)
-	body, err := baiduUtil.Fetch("http://tieba.baidu.com/c/c/bawu/commitprison", nil, post, header)
+	body, err := baiduUtil.Fetch("POST", "http://tieba.baidu.com/c/c/bawu/commitprison", nil, post, header)
 
 	baiduUtil.PrintErrAndExit("执行封禁时网络错误：", err)
 
