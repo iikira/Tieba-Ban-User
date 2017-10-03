@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"my/Baidu-Tools/tieba"
+	"github.com/iikira/baidu-tools/tieba"
 )
 
 var (
@@ -15,7 +15,7 @@ var (
 )
 
 type ban struct {
-	tieba.Tieba
+	*tieba.Tieba
 	preBanUser, // 准备封禁百度用户名
 	reason string // 封禁理由
 	day int // 封禁天数
@@ -48,7 +48,7 @@ func main() {
 	}
 
 	ban.bar.Fid, _ = tieba.GetTiebaFid(ban.bar.Name) //初始化数据，获取贴吧fid
-	ban.BDUSS = *bduss
-	ban.GetTbs()
+
+	ban.Tieba, _ = tieba.NewWithBDUSS(*bduss)
 	ban.banUser()
 }

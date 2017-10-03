@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/bitly/go-simplejson"
-	"my/Baidu-Tools/util"
+	"github.com/iikira/baidu-tools/util"
 )
 
 // banUser 执行 封禁
