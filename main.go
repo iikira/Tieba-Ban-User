@@ -15,11 +15,19 @@ var (
 )
 
 type ban struct {
+<<<<<<< HEAD
 	tieba.Tieba
 	preBanUser, // 准备封禁百度用户名
 	reason string // 封禁理由
 	day int // 封禁天数
 	bar tieba.Bar
+=======
+	BDUSS, // 百度BDUSS
+	user, // 百度用户名
+	reason string // 封禁理由
+	day int // 封禁天数
+	ba
+>>>>>>> 27eaacfc803494055859b6214cec2fbb1d94b40b
 }
 
 func main() {
