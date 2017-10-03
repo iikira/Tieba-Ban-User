@@ -6,29 +6,7 @@ import (
 	"my/Baidu-Tools/util"
 )
 
-<<<<<<< HEAD
 // banUser 执行 封禁
-=======
-type ba struct {
-	fid  string
-	name string
-}
-
-// getTbs 获取贴吧tbs
-func getTbs(BDUSS string) string {
-	header := map[string]string{
-		"Cookie": "BDUSS=" + BDUSS,
-	}
-	body, err := baiduUtil.Fetch("GET", "http://tieba.baidu.com/dc/common/tbs", nil, nil, header)
-	if err != nil {
-		return ""
-	}
-	json, _ := simplejson.NewJson(body)
-	return json.Get("tbs").MustString()
-}
-
-// banUser 执行封禁
->>>>>>> 27eaacfc803494055859b6214cec2fbb1d94b40b
 func (b *ban) banUser() {
 	post := map[string]string{
 		"BDUSS":  b.BDUSS,
